@@ -1,0 +1,23 @@
+<div class="container">
+<h1>Minh's Blog</h1>
+<h5 class="text-muted">My first Rails Application for CoderSchool!</h5>
+<% if notice != nil %>
+<div id="notice" class="alert alert-success alert-dismissible fade in" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <%= notice %>
+</div>
+<% end %>
+
+<% if @articles.present? %>
+  <%= render @articles %>
+<% else %>
+  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>
+
+<br>
+
+<%= link_to 'New Article', new_article_path %>
+</div>
+
